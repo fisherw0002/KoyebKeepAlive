@@ -1,0 +1,17 @@
+name: Koyeb Keep Alive
+
+on:
+  schedule:
+    # 每 45 分钟运行一次 (Koyeb 1小时无流量休眠，45分钟是安全范围)
+    - cron: '*/45 * * * *'
+  workflow_dispatch: # 允许手动点击运行测试
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Ping Request
+        run: |
+          # 将下方 URL 替换为你的 Koyeb 应用地址
+          # 建议指向我们稍后定义的 /health 路径
+          curl -s -I ${{ secrets.KOYEB_URL }}/sub | grep "HTTP/"
