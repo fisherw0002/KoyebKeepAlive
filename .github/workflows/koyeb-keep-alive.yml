@@ -14,4 +14,4 @@ jobs:
         run: |
           # 将下方 URL 替换为你的 Koyeb 应用地址
           # 建议指向我们稍后定义的 /health 路径
-          curl -s -I ${{ secrets.KOYEB_URL }}/SUB_PATH | grep "HTTP/"
+          curl -s -I ${{ secrets.KOYEB_URL }}/ | grep "HTTP/"
