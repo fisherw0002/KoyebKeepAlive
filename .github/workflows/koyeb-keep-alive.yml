@@ -2,8 +2,8 @@ name: Koyeb Keep Alive
 
 on:
   schedule:
-    # 每 45 分钟运行一次 (Koyeb 1小时无流量休眠，45分钟是安全范围)
-    - cron: '*/45 * * * *'
+    # 每 30 分钟运行一次 (Koyeb 1小时无流量休眠，30分钟是安全范围)
+    - cron: '*/30 * * * *'
   workflow_dispatch: # 允许手动点击运行测试
 
 jobs:
